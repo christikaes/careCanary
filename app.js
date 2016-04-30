@@ -21,6 +21,7 @@ app.get('/', function (req, res) {
 
 app.post('/api', function (req, res) {
     var text = req.rawBody;
+    console.log("Recieved POST:" + text);
     res.send(text);
 });
 
