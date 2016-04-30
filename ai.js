@@ -69,7 +69,7 @@ var hackText = function (input) {
   } else if(input.includes("thanks")){
     return "Great. Have a nice day."
   } else {
-    return "Tell me more about it."
+    return input
   }
 }
 
