@@ -76,17 +76,26 @@ var analyzeSentiment = function (input) {
     var sentimentAnalysis = getSentimentAnalysis(input);
     var data = sentimentAnalysis.entities[0];
     var text = data.text;
-    var mood = data.sentiment.type;
+    var sentiment = data.sentiment.type;
 
-    var response = "You sound "
+    var response = {};
 
-    if(mood === "negative"){
-      response += "sad, "
-    } else if(mood === "positive") {
-      response += "happy, "
+    // Sentiment
+    response.sentiment = sentiment;
+
+    // Text
+    response.text = "You sound "
+
+    if(sentiment === "negative"){
+      response.text += "sad, "
+    } else if(sentiment === "positive") {
+      response.text += "happy, "
     }
 
-    response+= "tell me more about " + text + ".";
+    response.text += "tell me more about " + text + ".";
+
+    // Image
+    response.image = "https://www.health-first.org/images/icon_wong_faces_for_pain.gif"
 
     return response;
 }
