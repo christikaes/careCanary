@@ -3,6 +3,7 @@ var alchemyapi = new AlchemyApi();
 
 var getSentiment = function(text, callback) {
 	alchemyapi.sentiment('text', text, {}, function(response) {
+		// console.log(response);
     if(response['docSentiment'] && response['docSentiment'].type){
       return callback(response['docSentiment'].type);
     } else {
@@ -13,6 +14,7 @@ var getSentiment = function(text, callback) {
 
 var getText = function(text, callback) {
 	alchemyapi.concepts('text', text, { 'showSourceText':1 }, function(response) {
+		console.log(response)
     if(response['concepts'] && response['concepts'][0] && response['concepts'].text){
       return callback(response['concepts'][0].text);
     } else {
@@ -51,7 +53,7 @@ var analyzeSentiment = function (input, callback) {
       }
 
       // HACK text for the demo
-      response.text = hackText(input);
+      response.text = hackText(input, response.text);
 
       callback(response);
 
@@ -59,7 +61,7 @@ var analyzeSentiment = function (input, callback) {
   })
 }
 
-var hackText = function (input) {
+var hackText = function (input, text) {
   if(input.includes("cooking")){
     return "What was your favorite part of cooking?"
   } else if(input.includes("husband")){
@@ -69,7 +71,7 @@ var hackText = function (input) {
   } else if(input.includes("thanks")){
     return "Great. Have a nice day."
   } else {
-    return input
+    return text
   }
 }
 
