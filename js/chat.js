@@ -13,8 +13,6 @@ $(document).ready(function(){
 		,incomingMessages=0
 		,lastMessage=""
 	;
-	
-	var lipsum="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.";
 
 	function gooOn(){
 		setFilter('url(#goo)');
@@ -61,9 +59,9 @@ $(document).ready(function(){
 	}
 	function sendMessage(){
 		var message=$input.text();
-		
+
 		if(message=="") return;
-		
+
 		lastMessage=message;
 
 		var messageElements=addMessage(message,true)
@@ -121,7 +119,7 @@ $(document).ready(function(){
 
 		gooOn();
 
-		
+
 		TweenMax.from(
 			$messageBubble,0.8,{
 				y:-pos.y,
@@ -156,7 +154,7 @@ $(document).ready(function(){
 		}
 
 		effectYTransition=setEffectYTransition(pos.y,0.8,Sine.easeInOut);
-		
+
 		// effectYTransition.updateTo({y:800});
 
 		TweenMax.from(
@@ -195,41 +193,16 @@ $(document).ready(function(){
 		if(Math.random()<0.65 || lastMessage.indexOf("?")>-1 || messages==1) getReply();
 	}
 	function getReply(){
-		if(incomingMessages>2) return;
-		incomingMessages++;
-		var typeStartDelay=1000+(lastMessage.length*40)+(Math.random()*1000);
+		var typeStartDelay=800;
+		var typeDelay=300;
 		setTimeout(friendIsTyping,typeStartDelay);
-
-		var source=lipsum.toLowerCase();
-		source=source.split(" ");
-		var start=Math.round(Math.random()*(source.length-1));
-		var length=Math.round(Math.random()*13)+1;
-		var end=start+length;
-		if(end>=source.length){
-			end=source.length-1;
-			length=end-start;
-		}
 		var message="";
-		for (var i = 0; i < length; i++) {
-			message+=source[start+i]+(i<length-1?" ":"");
-		};
-		message+=Math.random()<0.4?"?":"";
-		message+=Math.random()<0.2?" :)":(Math.random()<0.2?" :(":"");
-
-		var typeDelay=300+(message.length*50)+(Math.random()*1000);
 
 		setTimeout(function(){
-			receiveMessage(message);
-		},typeDelay+typeStartDelay);
-
-		setTimeout(function(){
-			incomingMessages--;
-			if(Math.random()<0.1){
-				getReply();
-			}
-			if(incomingMessages<=0){
+			$.post( "/api", lastMessage, function(result) {
+				receiveMessage(result.text);
 				friendStoppedTyping();
-			}
+			})
 		},typeDelay+typeStartDelay);
 	}
 	function friendIsTyping(){
