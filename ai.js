@@ -24,8 +24,10 @@ var getText = function(text, callback) {
 var analyzeSentiment = function (input, callback) {
   getSentiment(input, function(sentiment){
     getText(input, function(text){
-      if(!sentiment || !text){
+      if(!sentiment){
         sentiment = "neutral"
+      }
+      if (!text) {
         text = "it."
       }
       var response = {};
