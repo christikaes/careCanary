@@ -64,6 +64,8 @@ var hackText = function (input) {
     return "What did you like about cooking with your husband?"
   } else if(input.includes("joke")){
     return "[joke] Next time you cook, think of a joke."
+  } else if(input.includes("thanks")){
+    return "Great. Have a nice day."
   } else {
     return "Tell me more about it."
   }
