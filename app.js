@@ -1,5 +1,6 @@
 var express = require('express');
 var bodyParser = require('body-parser');
+var ai = require('./ai.js');
 
 var app = express();
 
@@ -20,9 +21,10 @@ app.get('/', function (req, res) {
 });
 
 app.post('/api', function (req, res) {
-    var text = req.rawBody;
-    console.log("Recieved POST:" + text);
-    res.send(text);
+    var input = req.rawBody;
+    console.log("Recieved POST:" + input);
+    var output = ai.getResponse(input);
+    res.send(output);
 });
 
 app.set('port', (process.env.PORT || 3000));
