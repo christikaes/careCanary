@@ -25,28 +25,28 @@ var analyzeSentiment = function (input, callback) {
   getSentiment(input, function(sentiment){
     getText(input, function(text){
       if(!sentiment || !text){
-        console.log("FAILED")
-        callback("Tell me more.");
-      } else {
-        var response = {};
-
-        // Sentiment
-        response.sentiment = sentiment;
-
-        // Text
-        response.text = "You sound "
-        if(sentiment === "negative"){
-          response.text += "sad, "
-        } else if(sentiment === "positive") {
-          response.text += "happy, "
-        }
-        response.text += "tell me more about " + text + ".";
-
-        // Image
-        response.image = "https://www.health-first.org/images/icon_wong_faces_for_pain.gif"
-
-        callback(response);
+        sentiment = "neutral"
+        text = "Tell me more."
       }
+      var response = {};
+
+      // Sentiment
+      response.sentiment = sentiment;
+
+      // Text
+      response.text = "You sound "
+      if(sentiment === "negative"){
+        response.text += "sad, "
+      } else if(sentiment === "positive") {
+        response.text += "happy, "
+      }
+      response.text += "tell me more about " + text + ".";
+
+      // Image
+      response.image = "https://image.freepik.com/free-icon/smiling-emoticon-square-face_318-58645.jpg"
+
+      callback(response);
+
     })
   })
 }
