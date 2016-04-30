@@ -26,7 +26,7 @@ var analyzeSentiment = function (input, callback) {
     getText(input, function(text){
       if(!sentiment || !text){
         sentiment = "neutral"
-        text = "Tell me more."
+        text = "it."
       }
       var response = {};
 
@@ -34,11 +34,11 @@ var analyzeSentiment = function (input, callback) {
       response.sentiment = sentiment;
 
       // Text
-      response.text = "You sound "
+      response.text = ""
       if(sentiment === "negative"){
-        response.text += "sad, "
+        response.text += "You sound sad, "
       } else if(sentiment === "positive") {
-        response.text += "happy, "
+        response.text += "You sound happy, "
       }
       response.text += "tell me more about " + text + ".";
 
