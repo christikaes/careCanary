@@ -1,7 +1,7 @@
 var AlchemyApi = require("./alchemyapi");
 var alchemyapi = new AlchemyApi();
 
-function getSentiment(text, callback) {
+var getSentiment = function(text, callback) {
 	alchemyapi.sentiment('text', text, {}, function(response) {
     if(response['docSentiment'] && response['docSentiment'].type){
       return callback(response['docSentiment'].type);
@@ -11,7 +11,7 @@ function getSentiment(text, callback) {
 	});
 }
 
-function getText(text, callback) {
+var getText = function(text, callback) {
 	alchemyapi.concepts('text', text, { 'showSourceText':1 }, function(response) {
     if(response['concepts'] && response['concepts'][0] && response['concepts'].text){
       return callback(response['concepts'][0].text);
@@ -43,12 +43,30 @@ var analyzeSentiment = function (input, callback) {
       response.text += "tell me more about " + text + ".";
 
       // Image
-      response.image = "https://image.freepik.com/free-icon/smiling-emoticon-square-face_318-58645.jpg"
+      response.image = "https://i.imgur.com/t8L6Iw4.png"
+      if(sentiment === "negative"){
+          response.image = "https://i.imgur.com/9ccCPJc.png"
+      }
+
+      // HACK text for the demo
+      response.text = hackText(input);
 
       callback(response);
 
     })
   })
+}
+
+var hackText = function (input) {
+  if(input.includes("cooking")){
+    return "What was your favorite part of cooking?"
+  } else if(input.includes("husband")){
+    return "What did you like about cooking with your husband?"
+  } else if(input.includes("joke")){
+    return "[joke] Next time you cook, think of a joke."
+  } else {
+    return "Tell me more about it."
+  }
 }
 
 var getResponse = function (input, callback){
