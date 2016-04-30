@@ -4,6 +4,7 @@
   "description": "Care Canary is an AI Virtual Therapist.",
   "main": "app.js",
   "dependencies": {
+    "body-parser": "^1.15.0",
     "express": "^4.13.4"
   },
   "devDependencies": {},
