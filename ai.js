@@ -68,9 +68,11 @@ var hackText = function (input, text) {
   var decomposedPos = getPos(x);
   vbg = decomposedPos.subject;
   if(input.indexOf("ing") > 0){
-    return "What was your favorite part of "+vbg+"?"
+		return "What was your favorite part of cooking?"
+		// return "What was your favorite part of "+vbg+"?"
   } else if(input.indexOf("husband") > 0 ){
-    return "What did you like about "+vbg+" with your husband?"
+		return "What did you like about cooking with your husband?"
+		// return "What did you like about "+vbg+" with your husband?"
   } else if(input.indexOf("joke") > 0 ){
     return "Why does the Mushroom always get invited to the party? . . . Because he is a fun-guy.  Next time you cook, think of a joke."
   } else if(input.indexOf("thanks") > 0){
@@ -92,7 +94,7 @@ module.exports = {
 
 var getPos = function( text ) {
 	var output = {};
-	
+
 	var words = new pos.Lexer().lex(text);
 	var tagger = new pos.Tagger();
 	var taggedWords = tagger.tag(words);
