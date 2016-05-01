@@ -72,7 +72,7 @@ var hackText = function (input, text) {
   } else if(input.indexOf("husband") > 0 ){
     return "What did you like about "+vbg+" with your husband?"
   } else if(input.indexOf("joke") > 0 ){
-    return "[joke] Next time you are "+vbg+" , think of a joke."
+    return "Why does the Mushroom always get invited to the party? . . . Because he is a fun-guy.  Next time you cook, think of a joke."
   } else if(input.indexOf("thanks") > 0){
     return "Great. Have a nice day."
   } else {
