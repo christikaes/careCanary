@@ -1,5 +1,7 @@
 var AlchemyApi = require("./alchemyapi");
 var alchemyapi = new AlchemyApi();
+var pos = require('pos');
+
 
 var getSentiment = function(text, callback) {
 	alchemyapi.sentiment('text', text, {}, function(response) {
@@ -62,13 +64,16 @@ var analyzeSentiment = function (input, callback) {
 }
 
 var hackText = function (input, text) {
-  if(input.includes("cooking")){
-    return "What was your favorite part of cooking?"
-  } else if(input.includes("husband")){
-    return "What did you like about cooking with your husband?"
-  } else if(input.includes("joke")){
-    return "[joke] Next time you cook, think of a joke."
-  } else if(input.includes("thanks")){
+  var x = input;
+  var decomposedPos = getPos(x);
+  vbg = decomposedPos.subject;
+  if(input.indexOf("ing") > 0){
+    return "What was your favorite part of "+vbg+"?"
+  } else if(input.indexOf("husband") > 0 ){
+    return "What did you like about "+vbg+" with your husband?"
+  } else if(input.indexOf("joke") > 0 ){
+    return "[joke] Next time you are "+vbg+" , think of a joke."
+  } else if(input.indexOf("thanks") > 0){
     return "Great. Have a nice day."
   } else {
     return text
@@ -83,4 +88,23 @@ var getResponse = function (input, callback){
 
 module.exports = {
   getResponse: getResponse
+}
+
+var getPos = function( text ) {
+	var output = {};
+	
+	var words = new pos.Lexer().lex(text);
+	var tagger = new pos.Tagger();
+	var taggedWords = tagger.tag(words);
+	var response = {};
+	for ( i in taggedWords) {
+		var taggedWord = taggedWords[i];
+		var word = taggedWord[0];
+		var tag = taggedWord[1];
+		if( tag == "VBG" ) {
+			response.subject = word;
+		}
+		console.log(word+" /"+tag);
+	}
+	return( response );
 }

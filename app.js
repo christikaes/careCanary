@@ -37,6 +37,14 @@ app.post('/api', function (req, res) {
     });
 });
 
+app.post('/api1', function (req, res) {
+    var input = req.rawBody;
+    console.log("Recieved POST:" + input );
+    ai.getResponse(input, function(output){
+        res.send(output);
+    });
+});
+
 app.set('port', (process.env.PORT || 3000));
 app.listen(app.get('port'), function() {
     console.log("Node app is running on port:" + app.get('port'));
