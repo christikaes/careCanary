@@ -67,7 +67,7 @@ var hackText = function (input, text) {
   } else if(input.includes("husband")){
     return "What did you like about cooking with your husband?"
   } else if(input.includes("joke")){
-    return "[joke] Next time you cook, think of a joke."
+    return "Why does the Mushroom always get invited to the party? . . . Because he is a fun-guy.  Next time you cook, think of a joke."
   } else if(input.includes("thanks")){
     return "Great. Have a nice day."
   } else {
