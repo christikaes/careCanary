@@ -11,15 +11,33 @@
 		<link rel="stylesheet" type="text/css" href="fonts/vicons/vicons-font.css" />
 		<link rel="stylesheet" type="text/css" href="css/base.css" />
 		<link rel="stylesheet" type="text/css" href="css/chat.css" />
+		<link rel="stylesheet" type="text/css" href="css/bubble.css" />
+
+		<script src="js/jquery.min.js"></script>
+		<script src="js/TweenMax.min.js"></script>
+		<script src="js/chat.js"></script>
+		<script type="text/javascript" src="js/materialize.min.js"></script>
+		<link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
 	</head>
 	<body class="demo-1">
 		<div class="container">
+			<section class="landing codrops-header">
+				<h1>CareCanary</h1>
+				<div class="speechbubble">
+					<img src="assets/carecanaryspeech2.svg"/>
+					<div class="speech">
+						Hi I'm Carey, the Care Canary. How are you feeling today?
+					</div>
+				</div>
+			</section>
+
 			<header class="codrops-header">
 				<h1>CareCanary<span><a href="https://github.com/christinakayastha/careCanary">Github</a></span></h1>
         <div class="logo">
           <img width="100px" src="assets/carecanary.png" />
         </div>
 			</header>
+
 			<div class="content">
 				<div class="chat-window">
 					<div class="chat-messages">
@@ -40,7 +58,7 @@
 						</div>
 						<div class="chat-input-wrapper">
 							<button class="chat-input-tool">
-								<i class="icon icon-microphone"></i>
+								<i class="icon icon-microphone1"></i>
 							</button>
 							<div class="chat-input" contenteditable></div>
 							<button class="chat-send">
@@ -60,8 +78,6 @@
 			  </defs>
 			</svg>
 		</div><!-- /container -->
-		<script src="js/jquery.min.js"></script>
-		<script src="js/TweenMax.min.js"></script>
-		<script src="js/chat.js"></script>
+
 	</body>
 </html>

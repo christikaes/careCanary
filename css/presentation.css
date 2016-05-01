@@ -1,0 +1,107 @@
+body, html {
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  color: #46484a;
+  background: black;
+  font-size: 40px;
+  font-weight: 100;
+}
+
+
+/*presentation*/
+.demo-1 {
+  height: 10000px;
+}
+
+.presentation {
+	width: 100%;
+	height: 90%;
+  overflow: hidden;
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+}
+
+#animate2, #animate3 {
+  max-width: 600px;
+  /*font-size: 30px;*/
+  padding: 20px 100px;
+  text-align: center
+}
+#animate0 {
+  background-color: black;
+}
+
+#animate4 {
+  background-color: lightblue;
+}
+
+#animate5 {
+  background-color: yellow;
+}
+
+#animate6 {
+  background-color: orange;
+}
+
+#animate7 {
+  background-color: #F8BBD0;
+}
+
+#animate8 {
+  background-color: grey;
+}
+
+
+.large-text {
+  font-size: 100px;
+}
+
+.medium-text {
+  font-size: 50px;
+}
+
+/*spacer*/
+.spacer {
+	text-align: center;
+	min-height: 100px;
+	background-image: url("../img/example_bg_spacer_v.gif");
+}
+.spacer.s0 {
+	min-height: 1px;
+}
+.spacer.s1 {
+	min-height: 100px;
+}
+.spacer.s2 {
+	min-height: 200px;
+}
+.spacer.s3 {
+	min-height: 300px;
+}
+.spacer.s4 {
+	min-height: 400px;
+}
+.spacer.s5 {
+	min-height: 500px;
+}
+.spacer.s6 {
+	min-height: 600px;
+}
+.spacer.s7 {
+	min-height: 700px;
+}
+.spacer.s8 {
+	min-height: 800px;
+}
+.spacer.s9 {
+	min-height: 900px;
+}
+.spacer.s10 {
+	min-height: 1000px;
+}
+.spacer.s_viewport {
+	min-height: 100%;
+}

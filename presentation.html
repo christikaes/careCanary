@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+		<title>CareCanary</title>
+		<link rel="shortcut icon" href="../favicon.ico">
+		<link rel="stylesheet" type="text/css" href="css/normalize.css" />
+    <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+		<link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.3.0/css/font-awesome.min.css" />
+		<link rel="stylesheet" type="text/css" href="fonts/vicons/vicons-font.css" />
+		<link rel="stylesheet" type="text/css" href="css/base.css" />
+		<link rel="stylesheet" type="text/css" href="css/chat.css" />
+		<link rel="stylesheet" type="text/css" href="css/bubble.css" />
+    <link rel="stylesheet" type="text/css" href="css/presentation.css" />
+
+    <script src="js/jquery.min.js"></script>
+		<script src="js/TweenMax.min.js"></script>
+		<script src="js/chat.js"></script>
+		<script type="text/javascript" src="js/materialize.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/ScrollMagic.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/plugins/animation.gsap.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/plugins/debug.addIndicators.min.js"></script>
+	</head>
+	<body class="demo-1" id="background">
+    <script>
+			// init controller
+			var controller = new ScrollMagic.Controller();
+		</script>
+    <div id = "animate0" class="presentation" style="top: 0; z-index:11">
+		</div>
+		<div id = "animate4" class="presentation valign-wrapper" style="top: 0; z-index:10">
+      <div class="valign center" style="width: 100%;">
+        <div class="large-text"> CareCanary </div>
+        <div style="display:flex; width:100%;" class="valign-wrapper">
+          <img src="assets/carecanary12.svg" class="valign hero-c" id="animate1" style="margin-left:36%"/>
+          <div class="valign">
+            <div style="opacity:0" id="animate2" class="medium-text">
+              Hi! I'm Carey.
+            </div>
+            <div style="opacity:0" id="animate3" class="medium-text">
+              How are you feeling today?
+            </div>
+          </div>
+        </div>
+      </div>
+		</div>
+    <div id = "animate5" class="presentation valign-wrapper" style="top: 0; z-index:9">
+      <div class="valign center" style="width: 100%;">
+        <div style="display:flex; justify-content:center; height: 150px; padding: 10px">
+          <img src="assets/carecanary12.svg" height="150px" style="margin-right:50px"/>
+          <div class="large-text"> CareCanary </div>
+        </div>
+        <div style="width:100%;" class="center">
+          Tackle depression with AI
+        </div>
+      </div>
+      <div style="display:flex; flex-direction:column; justify-content:center; padding: 10px; height: 100%" class="center">
+        <div class="medium-text"> Problem: People don't get treated for Depression </div>
+        <div> Stigma </div>
+        <div> Withdrawl </div>
+        <div> Not-enough Providers </div>
+      </div>
+		</div>
+    <div id = "animate6" class="presentation valign-wrapper" style="top: 0; z-index:8">
+      <div class="valign center" style="width: 100%;">
+        <div style="display:flex; justify-content:center; height: 150px; padding: 10px">
+          <img src="assets/carecanary12.svg" height="150px" style="margin-right:50px"/>
+          <div class="large-text"> CareCanary </div>
+        </div>
+        <div style="width:100%;" class="center">
+          Tackle depression with AI
+        </div>
+      </div>
+      <div style="display:flex; flex-direction:column; justify-content:center; padding: 10px; height: 100%" class="center">
+        <div class="medium-text"> Target Market: </div>
+        <div> ??? </div>
+      </div>
+		</div>
+    <div id = "animate7" class="presentation valign-wrapper" style="top: 0; z-index:7">
+      <div class="valign center" style="width: 100%;">
+        <div style="display:flex; justify-content:center; height: 150px; padding: 10px">
+          <img src="assets/carecanary12.svg" height="150px" style="margin-right:50px"/>
+          <div class="large-text"> CareCanary </div>
+        </div>
+        <div style="width:100%;" class="center">
+          Tackle depression with AI
+        </div>
+      </div>
+      <div style="display:flex; flex-direction:column; justify-content:center; padding: 10px; height: 100%" class="center">
+        <div class="medium-text"> Tech Stack: </div>
+        <div> ??? </div>
+      </div>
+		</div>
+    <div id = "animate8" class="presentation valign-wrapper" style="top: 0; z-index:6">
+      <div class="valign center" style="width: 100%;">
+        <div style="display:flex; justify-content:center; height: 150px; padding: 10px">
+          <img src="assets/carecanary12.svg" height="150px" style="margin-right:50px"/>
+          <div class="large-text"> CareCanary </div>
+        </div>
+      </div>
+      <div style="display:flex; flex-direction:column; justify-content:center; padding: 10px; height: 100%" class="center">
+        <div class="content">
+  				<div class="chat-window">
+  					<div class="chat-messages">
+  						<ol class="chat-messages-list">
+  							<li class="chat-message chat-message-friend">
+  								<div class="chat-message-bubble">
+  									Hey, how are you doing?
+  								</div>
+  							</li>
+  						</ol>
+  					</div>
+  					<div class="chat-input-bar">
+  						<div class="chat-info-container">
+
+  						</div>
+  						<div class="chat-effect-container">
+  							<div class="chat-effect-bar"></div>
+  						</div>
+  						<div class="chat-input-wrapper">
+  							<button class="chat-input-tool">
+  								<i class="icon icon-microphone1"></i>
+  							</button>
+  							<div class="chat-input" contenteditable></div>
+  							<button class="chat-send">
+  								<i class="fa fa-paper-plane"></i>
+  							</button>
+  						</div>
+  					</div>
+  				</div>
+  			</div>
+      </div>
+    </div>
+    <div class="spacer s10"></div>
+		<div id="trigger0" class="spacer s0"></div>
+    <div class="spacer s20"></div>
+    <div id="trigger1" class="spacer s0"></div>
+		<div class="spacer s2"></div>
+    <div id="trigger2" class="spacer s0"></div>
+		<div class="spacer s2"></div>
+    <div id="trigger3" class="spacer s0"></div>
+		<div class="spacer s2"></div>
+    <div id="trigger4" class="spacer s0"></div>
+		<div class="spacer s2"></div>
+    <div id="trigger5" class="spacer s0"></div>
+		<div class="spacer s2"></div>
+    <div id="trigger6" class="spacer s0"></div>
+		<div class="spacer s2"></div>
+    <div id="trigger7" class="spacer s0"></div>
+    <div class="spacer s2"></div>
+    <div id="trigger8" class="spacer s0"></div>
+    <div class="spacer s2"></div>
+		<script>
+				// build scene
+        new ScrollMagic.Scene({
+                  triggerElement: "#trigger0"
+                })
+                .setTween("#animate0", 0.5, {top: '-100%'}) // trigger a TweenMax.to tween
+                .addIndicators({name: "1 (duration: 0)"}) // add indicators (requires plugin)
+                .addTo(controller);
+        new ScrollMagic.Scene({
+									triggerElement: "#trigger0"
+								})
+								.setTween("#background", 1, {backgroundColor: 'yellow'}) // trigger a TweenMax.to tween
+								.addIndicators({name: "1 (duration: 0)"}) // add indicators (requires plugin)
+								.addTo(controller);
+
+				new ScrollMagic.Scene({
+									triggerElement: "#trigger1"
+								})
+								.setTween("#animate1", 0.5, {marginLeft: '20%'}) // trigger a TweenMax.to tween
+								.addIndicators({name: "1 (duration: 0)"}) // add indicators (requires plugin)
+								.addTo(controller);
+
+        new ScrollMagic.Scene({
+									triggerElement: "#trigger2"
+								})
+								.setTween("#animate2", 0.5, {opacity: '1'}) // trigger a TweenMax.to tween
+								.addIndicators({name: "1 (duration: 0)"}) // add indicators (requires plugin)
+								.addTo(controller);
+
+        new ScrollMagic.Scene({
+									triggerElement: "#trigger3"
+								})
+								.setTween("#animate3", 0.5, {opacity: '1'}) // trigger a TweenMax.to tween
+								.addIndicators({name: "1 (duration: 0)"}) // add indicators (requires plugin)
+								.addTo(controller);
+
+        new ScrollMagic.Scene({
+									triggerElement: "#trigger4"
+								})
+								.setTween("#animate4", 1, {top: '-100%'}) // trigger a TweenMax.to tween
+								.addIndicators({name: "1 (duration: 0)"}) // add indicators (requires plugin)
+								.addTo(controller);
+        new ScrollMagic.Scene({
+									triggerElement: "#trigger4"
+								})
+								.setTween("#background", 1, {backgroundColor: 'orange'}) // trigger a TweenMax.to tween
+								.addIndicators({name: "1 (duration: 0)"}) // add indicators (requires plugin)
+								.addTo(controller);
+
+        new ScrollMagic.Scene({
+									triggerElement: "#trigger5"
+								})
+								.setTween("#animate5", 1, {top: '-100%'}) // trigger a TweenMax.to tween
+								.addIndicators({name: "1 (duration: 0)"}) // add indicators (requires plugin)
+								.addTo(controller);
+        new ScrollMagic.Scene({
+									triggerElement: "#trigger5"
+								})
+								.setTween("#background", 1, {backgroundColor: '#F44336'}) // trigger a TweenMax.to tween
+								.addIndicators({name: "1 (duration: 0)"}) // add indicators (requires plugin)
+								.addTo(controller);
+
+        new ScrollMagic.Scene({
+									triggerElement: "#trigger6"
+								})
+								.setTween("#animate6", 1, {top: '-100%'}) // trigger a TweenMax.to tween
+								.addIndicators({name: "1 (duration: 0)"}) // add indicators (requires plugin)
+								.addTo(controller);
+        new ScrollMagic.Scene({
+									triggerElement: "#trigger6"
+								})
+								.setTween("#background", 1, {backgroundColor: 'pink'}) // trigger a TweenMax.to tween
+								.addIndicators({name: "1 (duration: 0)"}) // add indicators (requires plugin)
+								.addTo(controller);
+
+        new ScrollMagic.Scene({
+									triggerElement: "#trigger7"
+								})
+								.setTween("#animate7", 1, {top: '-100%'}) // trigger a TweenMax.to tween
+								.addIndicators({name: "1 (duration: 0)"}) // add indicators (requires plugin)
+								.addTo(controller);
+        new ScrollMagic.Scene({
+									triggerElement: "#trigger7"
+								})
+								.setTween("#background", 1, {backgroundColor: 'black'}) // trigger a TweenMax.to tween
+								.addIndicators({name: "1 (duration: 0)"}) // add indicators (requires plugin)
+								.addTo(controller);
+		</script>
+
+	</body>
+</html>

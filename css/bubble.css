@@ -1,0 +1,40 @@
+.bubble
+{
+position: relative;
+width: 250px;
+height: 120px;
+padding: 0px;
+background: #FFFFFF;
+-webkit-border-radius: 43px;
+-moz-border-radius: 43px;
+border-radius: 43px;
+border: #FFFF2E solid 6px;
+}
+
+.bubble:after
+{
+content: '';
+position: absolute;
+border-style: solid;
+border-width: 20px 20px 20px 0;
+border-color: transparent #FFFFFF;
+display: block;
+width: 0;
+z-index: 1;
+left: -20px;
+top: 40px;
+}
+
+.bubble:before
+{
+content: '';
+position: absolute;
+border-style: solid;
+border-width: 25px 25px 25px 0;
+border-color: transparent #FFFF2E;
+display: block;
+width: 0;
+z-index: 0;
+left: -31px;
+top: 35px;
+}

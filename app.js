@@ -25,6 +25,10 @@ app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname+'/index.html'));
 });
 
+app.get('/presentation', function (req, res) {
+  res.sendFile(path.join(__dirname+'/presentation.html'));
+});
+
 app.post('/api', function (req, res) {
     var input = req.rawBody;
     console.log("Recieved POST:" + input);
